@@ -1,0 +1,57 @@
+
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: hsl(206, 76%, 92%);
+}
+
+ul{
+    list-style-type: none;
+}
+
+.plans{
+    display:flex;
+    justify-content: space-between;
+}
+
+.plan{
+    outline:1px dotted black;
+    width:150px;
+    height:170px
+}
+
+.container{
+    width:950px;
+    max-width:80vw;
+    background-color: white;
+    border-radius:20px;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    margin:40px auto;
+}
+
+.steps{
+    grid-column: span 2;
+}
+
+/*Side bar*/
+
+.sidebar{
+    padding:20px;
+    height:100%;
+}
+
+.sidebar > div{
+
+    background: url('assets/images/bg-sidebar-desktop.svg')  no-repeat scroll center;
+  background-size: cover;
+    border-radius: 10px;
+}
+
+
+
