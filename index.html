@@ -24,31 +24,31 @@
         
         <ul>
           <li>
-            <p class="bullet"> 1</p>
+            <p class="bullet current"> 1</p>
             <div>
               <p class="step-number">Step 1</p>
-              <h3 class="bullet-heading">Your Info</h3>
+              <h4 class="bullet-heading">Your Info</h4>
             </div>
           </li>
           <li>
             <p class="bullet"> 2</p>
             <div>
               <p class="step-number">Step 2</p>
-              <h3 class="bullet-heading">Select Plan</h3>
+              <h4 class="bullet-heading">Select Plan</h4>
             </div>
           </li>
           <li>
             <p class="bullet"> 3</p>
             <div>
               <p class="step-number">Step 3</p>
-              <h3 class="bullet-heading">Add-Ons</h3>
+              <h4 class="bullet-heading">Add-Ons</h4>
             </div>
           </li>
           <li>
             <p class="bullet"> 4</p>
             <div>
               <p class="step-number">Step 4</p>
-              <h3 class="bullet-heading">Summary</h3>
+              <h4 class="bullet-heading">Summary</h4>
             </div>
           </li>
         </ul>
@@ -62,14 +62,14 @@
         <h2 class="step-heading">Personal info</h2>
         <p class="step-subheading"> Please provide your name, email address, and phone number.</p>
 
-      <label for="name">Name</label><br>
-      <input type="text" id="name" placeholder="e.g Stephen King" required><br>
-      <label for="email">Email Address</label><br>
-      <input type="email" id="email" placeholder=" e.g. stephenking@lorem.com" required><br>
-      <label for="phone-number">Phone Number</label><br>
-      <input type="tel" id="phone-number" placeholder="e.g +1 234 567 890" required><br>
+      <label for="name" class="label-control">Name <span>This field is required</span></label><br>
+      <input type="text" id="name" placeholder="e.g Stephen King" required class="input-control"><br>
+      <label for="email" class="label-control">Email Address <span>This field is required</span></label><br>
+      <input type="email" id="email" placeholder=" e.g. stephenking@lorem.com" required class="input-control"><br>
+      <label for="phone-number" class="label-control">Phone Number <span>This field is required</span></label><br>
+      <input type="tel" id="phone-number" placeholder="e.g +1 234 567 890" required class="input-control"><br>
       </div>
-      <div class="buttons">
+      <div class="buttons buttons-1">
         <button type="button" class="next-btn" id="next-btn-1">Next Step</button>
       </div>
       </form>
@@ -82,10 +82,11 @@
       <h2 class="step-heading">Select your plan</h2>
       <p class="step-subheading">You have the option of monthly or yearly billing.</p>
       <div class="plans">
-        <div class="plan">
+        <div class="plan selected">
           <div class="icon-wrapper">
             <img src="assets/images/icon-arcade.svg" alt="arcade icon">
           </div>
+          <div>
           <p class="plan-name">Arcade</p>
           <p class="price">
             <span>$</span>
@@ -94,10 +95,12 @@
           </p>
           <p class="free-months">2 months free</p>
         </div>
+        </div>
         <div class="plan">
           <div class="icon-wrapper">
             <img src="assets/images/icon-advanced.svg" alt="arcade icon">
           </div>
+          <div>
           <p class="plan-name">Advanced</p>
           <p class="price">
             <span>$</span>
@@ -106,10 +109,12 @@
           </p>
           <p class="free-months">2 months free</p>
         </div>
+        </div>
         <div class="plan">
           <div class="icon-wrapper">
             <img src="assets/images/icon-pro.svg" alt="arcade icon">
           </div>
+          <div>
           <p class="plan-name">Pro</p>
           <p class="price">
             <span>$</span>
@@ -118,13 +123,14 @@
           </p>
           <p class="free-months">2 months free</p>
         </div>
+        </div>
       </div>
       <div class="duration-bar">
-        <p>Monthly</p>
-        <div class="toggle">
+        <p class="mo">Monthly</p>
+        <div class="toggle yearl">
           <div></div>
         </div>
-        <p>Yearly</p>
+        <p class="yr">Yearly</p>
       </div>
   </div>
   <div class="buttons">
@@ -142,7 +148,7 @@
       <div class="add-ons">
         <div class="add-on" id="add-on-1">
           <div>
-            <input type="checkbox" id="online-services" class=input-control name=online-services value="yes" required>
+            <input type="checkbox" id="online-services" class=check-control name=online-services value="yes">
             <label for="online-services">
               <div class="add-one-name">
                 <p class="name">Online Services</p>
@@ -155,7 +161,7 @@
 
         <div class="add-on" id="add-on-2">
           <div>
-            <input type="checkbox" id="storage" class=input-control name='storage' value="yes" required>
+            <input type="checkbox" id="storage" class=check-control name='storage' value="yes">
             <label for="storage">
               <div class="add-one-name">
                 <p class="name">Larger storage</p>
@@ -167,7 +173,7 @@
         </div>
         <div class="add-on" id="add-on-3">
           <div>
-            <input type="checkbox" id="custome-profile" class=input-control name='custome-profile' value="yes" required>
+            <input type="checkbox" id="custome-profile" class=check-control name='custome-profile' value="yes">
             <label for="custome-profile">
               <div class="add-one-name">
                 <p class="name">Customizable Profile</p>
@@ -212,17 +218,17 @@
           </div>
           </div>
           <p class="total">Total(per year) <span>$120/yr</span></p>
+          </div>
           <div class="buttons">
-            <button class="prev-btn" id="prev-btn-2">Go Back</button>
-            <button type="button" class="next-btn" id="next-btn-3">Confirm</button>
+            <button class="prev-btn" id="prev-btn-3">Go Back</button>
+            <button type="button" class="next-btn" id="next-btn-4">Confirm</button>
           </div>   
         </div>
-      </div>
 
       <!-- Step 4 ends -->
       <!-- Step 5 start -->
 
-  <div class="step" id="step-5">
+  <div class="step step-5">
     <img src="assets/images/icon-thank-you.svg" alt="thank you icon">
     <h3>Thank you!</h3>
     <p>Thanks for confirming your subscription! We hope you have fun 
@@ -242,5 +248,6 @@
     Coded by <a href="#">Abdulqudus Sanusi</a>.
   </div>
 </footer>
+<script src="script.js"></script>
 </body>
 </html>
