@@ -12,8 +12,6 @@ body{
     font-family: helvetica;
 }
 
-
-
 .bullet{
     width:35px;
     height:35px;
@@ -52,7 +50,7 @@ body{
 
 .container{
     width:950px;
-    max-width:80vw;
+    max-width:90vw;
     height:590px;
     background-color: white;
     border-radius:15px;
@@ -91,9 +89,9 @@ li{
 .steps{
     background-color: ;
     position:relative;
-    overflow: hidden;
     display:flex;
     justify-content: center;
+    overflow-x: hidden;
 }
 
 .step{
@@ -426,6 +424,7 @@ a{
 @media screen and (max-width:500px){
 body{
     position:relative;
+    height:110vh;
 }
 
 .desktop-sidebar{
@@ -433,12 +432,19 @@ body{
 }
     .container{
         grid-template-columns: 1fr;
-        padding:0;
+        padding:20px 0;
         margin:0;
         position:absolute;
         top:110px;
        left:50%;
        transform:translateX(-50%);
+    }
+
+    .container{
+        height:600px;
+        background-color: white;
+        border-radius:15px;
+        display:grid;
     }
 
 
@@ -454,6 +460,9 @@ body{
         
     }
 
+    .steps{
+        
+    }
     ul{
        display:flex;
        justify-content: center;
