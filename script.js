@@ -15,6 +15,30 @@ let prevBtn5 = document.querySelector('#prev-btn-4');
 
 let toggle = document.querySelector('.toggle');
 let bullet = document.querySelectorAll('.bullet');
+const link = document.querySelector('#link');
+let plans = document.querySelectorAll('.plan');
+let selectedPlanName = '';
+
+
+plans.forEach(each => {
+    each.addEventListener('click', e => {
+        if(each.classList.contains('selected')){
+            each.classList.remove('selected');
+        }else{
+            for (let i = 0; i < plans.length; i++){
+                plans[i].classList.remove('selected');
+            }
+            each.classList.add('selected');
+            selectedPlanName = each.querySelector('.plan-name').textContent;
+        }
+
+        document.querySelectorAll('.main-plan').forEach(each => {
+            //each.textContent = `${selectedPlanName} (Yearly)`;
+            each.innerHTML = `${selectedPlanName} <span>(Monthly)</span>`
+        })
+        
+    })
+})
 
 toggle.addEventListener('click', e => {
     let toggleInner = toggle.querySelector('div');
@@ -23,11 +47,38 @@ toggle.addEventListener('click', e => {
         toggle.classList.remove('yearly');
         document.querySelector('.mo').style.color = 'hsl(213, 96%, 18%)';
         document.querySelector('.yr').style.color = 'silver';
+        document.querySelectorAll('.duration').forEach(each => {
+            each.textContent = '/mo';
+        })
+        document.querySelectorAll('.free-months').forEach(each => {
+            each.style.display = 'none';
+        })
+
+        document.querySelectorAll('.main-plan span').forEach(each => {
+            each.textContent = '(Monthly)';
+        
+        })
+
+        convertPriceToMo();
     }
     else{
         toggle.classList.add('yearly');
         document.querySelector('.yr').style.color = 'hsl(213, 96%, 18%)';
         document.querySelector('.mo').style.color = 'silver';
+        document.querySelectorAll('.duration').forEach(each => {
+            each.textContent = '/yr';
+        })
+        document.querySelectorAll('.main-plan span').forEach(each => {
+            each.textContent = '(Yearly)';
+            //each.innerHTML = `${selectedPlanName} <span>(Yearly)</span>`
+        })
+
+        document.querySelectorAll('.free-months').forEach(each => {
+            each.style.display = 'block';
+        })
+
+        
+        convertPriceToYr();
     }
 }) 
 
@@ -71,7 +122,29 @@ prevBtn4.addEventListener('click' , e=> {
     step4.classList.remove('slideIn');
     bullet[3].classList.remove('current');
 })
-prevBtn5.addEventListener('click' , e=> {
+prevBtn5.addEventListener('click' , e => {
     step4.classList.add('slideIn');
     step5.classList.remove('slideIn');
 })
+
+// link.addEventListener('click', e => {
+//     e.preventDefault();
+//     step2.classList.add('slideIn');
+//     step4.classList.remove('slideIn');
+// })
+
+function convertPriceToYr(){
+    let amounts = document.querySelectorAll('.amount');
+
+    for(let i = 0; i < amounts.length; i++){
+        amounts[i].textContent = amounts[i].textContent * 10;
+    }
+}
+
+function convertPriceToMo(){
+    let amounts = document.querySelectorAll('.amount');
+
+    for(let i = 0; i < amounts.length; i++){
+        amounts[i].textContent = amounts[i].textContent / 10;
+    }
+}
